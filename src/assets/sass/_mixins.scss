@@ -1,0 +1,39 @@
+$breakpoint-up: (
+  "medium": 43.75rem,//700px
+  "large": 61.125rem,//978px
+  "xlarge": 90rem,//1440px
+);
+
+$breakpoint-down: (
+  "small": 43.7488rem,//699.98px
+  "medium": 61.1869rem,//977.98px
+  "large": 89.9988rem,//1439.88px
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoint-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoint-down, $size)) {
+    @content;
+  }
+}
+
+@mixin successInput(){
+  &.success {
+    small {
+      color: #2ecc71;
+    }
+  }
+}
+
+@mixin errorInput(){
+  &.error {
+    small {
+      color: #e74c3c;
+    }
+  }
+}

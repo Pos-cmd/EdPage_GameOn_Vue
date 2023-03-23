@@ -1,0 +1,96 @@
+.form {
+  background-color: #313131;
+  max-width: 34.5864rem;
+  width: 100%;
+  height: 925px;
+  margin-inline: auto;
+  border-radius: 5px;
+
+  &__items {
+    padding: 0 2rem;
+    height: 90%;
+    grid-template-rows: repeat(8, 1fr);
+
+    &.btn {
+      margin-top: 4rem;
+    }
+  }
+
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 1rem 0;
+  }
+
+  i {
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.8125rem;
+    color: #fff;
+    font-size: 0.9375rem;
+
+    &--no {
+      font-size: 0.875rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+
+    @include errorInput;
+
+    @include successInput;
+    }
+
+    @include errorInput;
+
+    @include successInput;
+
+    small {
+      padding-top: 0.3rem;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"] {
+      height: 2.5rem;
+      border-radius: 0.3125rem;
+      border-color: #adadad;
+      border: none;
+      padding-inline: 1rem;
+      margin-block-start: 0.625rem;
+    }
+  }
+
+  .check{
+    @include errorInput;
+    @include successInput;
+  }
+
+  &__success {
+    height: 90%;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__success-container {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 55%;
+    margin-block-start: 2rem;
+    padding: 0 2rem;
+  }
+
+  &__sub-btn {
+    width: 9.375rem;
+    padding: 1rem 2rem;
+    margin-inline: auto;
+  }
+}
