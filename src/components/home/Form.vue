@@ -22,21 +22,13 @@ function isValidEmail(email) {
 function isValidDate(input) {
   let selectDate = new Date(input);
   let age = new Date().getFullYear() - selectDate.getFullYear();
-  if (age >= 10) {
-    return true;
-  }
-  return false;
+  return age >= 10;
 }
 
 function isValidNumber(participation) {
-  if (
-    participation != "" &&
-    Number.isInteger(Number(participation)) &&
-    participation >= 0
-  ) {
-    return true;
-  }
-  return false;
+  return participation !== "" &&
+      Number.isInteger(Number(participation)) &&
+      participation >= 0;
 }
 
 function submit(event) {
@@ -101,10 +93,10 @@ function submit(event) {
   }
 
 
-  if (!Object.entries(isValidate).some((error) => error[1] == false)) {
+  if (!Object.entries(isValidate).some((error) => error[1] === false)) {
     isValid.value = true;
     form.value.reset();
-  };
+  }
 
 }
 
@@ -115,8 +107,6 @@ function formClose() {
   form.value.reset();
   isValidate = reactive({});
 }
-
-
 
 </script>
 

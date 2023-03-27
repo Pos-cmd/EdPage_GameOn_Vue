@@ -1,4 +1,10 @@
-<script setup></script>
+<script setup>
+  const emit = defineEmits(['showForm']);
+
+  function showForm(){
+    emit('showForm')
+  }
+</script>
 
 <template>
     <div class="main__container" itemscope itemtype="http://schema.org/Event">
@@ -14,7 +20,7 @@
           alt="homme jouant a un jeux"
           class="main__img hide-for-lg"
         />
-        <button class="main__sub-btn btn show_form hide-for-lg" @click="$emit('showForm')">
+        <button class="main__sub-btn btn show_form hide-for-lg" @click="showForm">
           Je M'inscris
         </button>
 
@@ -37,7 +43,7 @@
               itemprop="potentialAction"
               itemscope
               itemtype="http://schema.org/ReserveAction"
-              @click="$emit('showForm')"
+              @click="showForm"
             >
               Je M'inscris
             </button>
